@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex,nofollow,noarchive">
-<title>Magazzino CHC — V45</title>
+<title>Magazzino CHC — V46</title>
 <style>
 html,body{height:100%;margin:0;font-family:Arial,sans-serif;background:#eef6fb;color:#123}
 #chc-loader{height:100%;display:flex;align-items:center;justify-content:center;padding:24px;box-sizing:border-box;text-align:center}
@@ -15,7 +15,7 @@ html,body{height:100%;margin:0;font-family:Arial,sans-serif;background:#eef6fb;c
 </style>
 </head>
 <body>
-<div id="chc-loader"><div id="chc-loader-box"><div id="chc-loader-spin"></div><strong>Avvio Magazzino CHC V45…</strong><p>Caricamento protetto dell’applicazione.</p><div id="chc-loader-error"></div></div></div>
+<div id="chc-loader"><div id="chc-loader-box"><div id="chc-loader-spin"></div><strong>Avvio Magazzino CHC V46…</strong><p>Caricamento protetto dell’applicazione.</p><div id="chc-loader-error"></div></div></div>
 <script>
 (()=>{
 'use strict';
@@ -28,7 +28,7 @@ const fail=(message)=>{
 (async()=>{
  try{
   if(!('DecompressionStream' in window)) throw new Error('Il browser non supporta il caricamento compresso. Usa una versione aggiornata di Chrome, Edge o Firefox.');
-  const response=await fetch('./chc-core-d875bc40f0308824.bin',{cache:'no-store',credentials:'same-origin'});
+  const response=await fetch('./chc-core-2cc703afdc38fabb.bin',{cache:'no-store',credentials:'same-origin'});
   if(!response.ok||!response.body) throw new Error('File applicazione non disponibile ('+response.status+').');
   const stream=response.body.pipeThrough(new DecompressionStream('gzip'));
   const appHtml=await new Response(stream).text();
@@ -37,7 +37,7 @@ const fail=(message)=>{
   document.write(appHtml);
   document.close();
  }catch(error){
-  console.error('CHC V45 loader:',error);
+  console.error('CHC V46 loader:',error);
   fail(error&&error.message?error.message:String(error));
  }
 })();
